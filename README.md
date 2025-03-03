@@ -11,7 +11,7 @@ Feed The Mammoth is an onchain tapping game developed for the Celestia Hackathon
 
 ## Requirements
 - An EVM compatible wallet
-- Testnet tokens from for [this G2 testnet chain](https://hub.conduit.xyz/mammothon-g2-testnet-4a2w8v0xqy)
+- Testnet tokens for [this G2 testnet chain](https://hub.conduit.xyz/mammothon-g2-testnet-4a2w8v0xqy)
 
 ## Technical Details
 - **Smart Contract**: Deployed on Conduit G2 Testnet
