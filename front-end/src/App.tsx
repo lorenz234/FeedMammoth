@@ -3,9 +3,17 @@ import { ethers } from "ethers";
 import "./App.css";
 import { CONTRACT_ADDRESS, CONTRACT_ABI } from "./contract_abi.ts";
 
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
+
 const RPC_URL = "https://rpc-mammothon-g2-testnet-4a2w8v0xqy.t.conduit.xyz";
 const BLOCK_EXPLORER = "https://explorer-mammothon-g2-testnet-4a2w8v0xqy.t.conduit.xyz";
 const FUND_AMOUNT = ethers.parseEther("0.001"); // 0.001 ETH
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 // Food crumb properties
 type Crumb = {
@@ -105,7 +113,8 @@ function App() {
     if (!signer) return;
     
     // Step 1: Generate new session wallet
-    const newSessionWallet = ethers.Wallet.createRandom();
+    const randomWallet = ethers.Wallet.createRandom();
+    const newSessionWallet = new ethers.Wallet(randomWallet.privateKey, new ethers.JsonRpcProvider(RPC_URL));
     localStorage.setItem("sessionKey", newSessionWallet.privateKey);
     setSessionKey(newSessionWallet);
 
@@ -255,7 +264,7 @@ function App() {
     const y = event.clientY;
     
     // Play eating sound
-    const eatSound = new Audio('/eat.mp3');
+    const eatSound = new Audio(`${BASE_URL}eat.mp3`);
     eatSound.volume = 0.6; // Adjust volume to 60%
     eatSound.play().catch(err => console.error("Error playing sound:", err));
     
@@ -298,7 +307,7 @@ function App() {
       <br />
       <div className="mammoth-container">
         <img
-          src="/viet-mammoth.jpg"
+          src={`${BASE_URL}viet-mammoth.jpg`}
           alt="Mammoth"
           className={`mammoth-img ${isEating ? 'eating' : ''}`}
           onClick={callFeedMammoth}
