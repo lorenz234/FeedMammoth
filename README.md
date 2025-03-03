@@ -3,9 +3,10 @@
 ## The Game
 Feed The Mammoth is an onchain tapping game developed for the Celestia Hackathon under the Conduit G2 track. Players tap to feed the mammoth, triggering an onchain hash game in the backend. The goal is to generate random hashes and compete for the lowest hash to win the round and earn tokens.
 
-## How to Play
-1. **Connect your wallet**: Obtain testnet tokens for [this G2 testnet chain](https://hub.conduit.xyz/mammothon-g2-testnet-4a2w8v0xqy).
-2. **Create a Session Key**: Generate a session key and fund it with ETH testnet tokens.
+## How to Play  
+0. **Open the Frontend**: Access the live deployment here: [https://lorenz234.github.io/FeedMammoth/](https://lorenz234.github.io/FeedMammoth/).  
+1. **Connect Your Wallet**: Obtain testnet tokens for the [G2 testnet chain](https://hub.conduit.xyz/mammothon-g2-testnet-4a2w8v0xqy) and switch your wallet to this chain.  
+2. **Create a Session Key**: Generate a session key and fund it with ETH testnet tokens.  
 3. **Feed the Mammoth**: Tap the mammoth to participate in the hash game. The player with the lowest hash wins the round.
 
 ## Requirements
